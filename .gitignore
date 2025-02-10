@@ -1,0 +1,8 @@
+bin
+build
+bin-int
+Makefile
+out
+*.filters
+*.user
+*.vcxproj
