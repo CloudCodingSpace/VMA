@@ -29,6 +29,12 @@ project "VMA"
             "vulkan-1.lib"
         }
 
+    filter "action:vs2026"
+        links 
+        {
+            "vulkan-1.lib"
+        }
+
     filter "action:gmake or action:gmake2"
         links
         {
