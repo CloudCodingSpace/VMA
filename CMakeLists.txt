@@ -5,6 +5,7 @@ file(GLOB_RECURSE SRCS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(Vulkan REQUIRED)
+find_package(Threads REQUIRED)
 
 add_library(VMA ${SRCS})
 target_compile_definitions(VMA PRIVATE
@@ -15,4 +16,4 @@ target_compile_definitions(VMA PUBLIC
     VMA_DYNAMIC_VULKAN_FUNCTIONS=0
 )
 target_include_directories(VMA PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(VMA PUBLIC Vulkan::Vulkan)
+target_link_libraries(VMA PUBLIC Vulkan::Vulkan Threads::Threads)
